@@ -5,7 +5,7 @@ import { FormsModule }    from '@angular/forms';
 import { AppComponent }       from './app.component';
 import { routing} from './app.routing';
 
-import {MenuComponent} from './components/menu/menu.component'
+import {AppMenuComponent} from './components/app-menu/app-menu.component'
 
 import { HomeComponent } from './components/home/home.component';
 
@@ -24,7 +24,7 @@ import {ProductsComponent} from "./components/products/products.component";
   ],
   declarations: [
     AppComponent,
-    MenuComponent,
+    AppMenuComponent,
     HomeComponent,
     ContactComponent,
     ProductsComponent,
