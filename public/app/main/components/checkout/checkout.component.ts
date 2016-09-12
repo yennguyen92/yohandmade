@@ -1,12 +1,12 @@
 import {Component, AfterContentInit} from "@angular/core";
-import {RenderingUIComponent} from "../rendering-iu/rendering-ui.component";
+import {RenderingUIAbstractComponent} from "../rendering-iu/rendering-ui.abstract.component";
 
 @Component({
     templateUrl: 'app/main/components/checkout/checkout.component.html',
     styleUrls: ['app/main/components/checkout/checkout.component.css']
 })
 
-export class CheckoutComponent extends RenderingUIComponent{
+export class CheckoutComponent extends RenderingUIAbstractComponent{
     renderUI() {
         jQuery('.close1').on('click', function(c){
             jQuery('.rem1').fadeOut('slow', function(c){

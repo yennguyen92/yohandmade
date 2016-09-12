@@ -1,11 +1,11 @@
 import { Component} from '@angular/core';
-import {RenderingUIComponent} from "../rendering-iu/rendering-ui.component";
+import {RenderingUIAbstractComponent} from "../rendering-iu/rendering-ui.abstract.component";
 
 @Component({
     templateUrl: 'app/main/components/home/home.component.html',
     styleUrls: ['app/main/components/home/home.component.css']
 })
-export class HomeComponent extends RenderingUIComponent {
+export class HomeComponent extends RenderingUIAbstractComponent {
     renderUI() {
         jQuery('#visual').pignoseLayerSlider({
             play    : '.btn-play',

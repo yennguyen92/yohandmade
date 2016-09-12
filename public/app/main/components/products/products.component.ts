@@ -1,6 +1,6 @@
 import {Component, AfterContentInit, ViewEncapsulation, AfterViewChecked} from "@angular/core";
 import "jquery/responsive-slides";
-import {RenderingUIComponent} from "../rendering-iu/rendering-ui.component";
+import {RenderingUIAbstractComponent} from "../rendering-iu/rendering-ui.abstract.component";
 import {log} from "typings/dist/support/cli";
 
 @Component({
@@ -8,7 +8,7 @@ import {log} from "typings/dist/support/cli";
     styleUrls: ['app/main/components/products/products.component.css']
 })
 
-export class ProductsComponent extends RenderingUIComponent{
+export class ProductsComponent extends RenderingUIAbstractComponent{
 
     renderUI(){
         jQuery("#slider-range").slider({
