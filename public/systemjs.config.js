@@ -18,7 +18,8 @@
     },
     paths: {
       // paths serve as alias
-      'npm:': 'https://unpkg.com/'
+      //'npm:': 'https://unpkg.com/'
+      'npm:': 'node_modules/'
     },
     // map tells the System loader where to look for things
     map: {
@@ -38,8 +39,8 @@
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-      'ts':                         'npm:plugin-typescript@4.0.10/lib/plugin.js',
-      'typescript':                 'npm:typescript@1.9.0-dev.20160409/lib/typescript.js',
+      'ts':                         'npm:plugin-typescript/lib/plugin.js',
+      'typescript':                 'npm:typescript/lib/typescript.js',
 
     },
     // packages tells the System loader how to load when no filename and/or no extension
@@ -49,6 +50,9 @@
         defaultExtension: 'ts'
       },
       rxjs: {
+        defaultExtension: 'js'
+      },
+      ts: {
         defaultExtension: 'js'
       },
       'angular2-in-memory-web-api': {

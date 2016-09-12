@@ -1,35 +1,39 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule }   from '@angular/router';
 
-import { loginRoutes, authProviders }  from '../login/login.routing';
+import { HomeComponent } from './components/home/home.component';
 
-import { CanDeactivateGuard } from './can-deactivate-guard.service';
+import { ContactComponent } from './components/contact/contact.component';
 
-const main
+import { CheckoutComponent } from './components/checkout/checkout.component'
+import {ProductsComponent} from "./components/products/products.component";
 
-const crisisCenterRoutes: Routes = [
+const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/heroes',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path: 'crisis-center',
-    loadChildren: 'app/crisis-center/crisis-center.module#CrisisCenterModule'
+    path: 'home',
+    component:HomeComponent
+  },
+  {
+    path: 'contact',
+    component:ContactComponent
+  },
+  {
+    path:'checkout',
+    component:CheckoutComponent
+  },
+  {
+    path:'products',
+    component:ProductsComponent
   }
 ];
 
-const appRoutes: Routes = [
-  ...loginRoutes,
-  ...crisisCenterRoutes
-];
 
-export const appRoutingProviders: any[] = [
-  authProviders,
-  CanDeactivateGuard
-];
-
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes, { useHash: true });
 
 
 /*
