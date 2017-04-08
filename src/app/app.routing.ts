@@ -6,12 +6,14 @@ import {CheckoutComponent} from "./pages/checkout/checkout.component";
 import {ProductsComponent} from "./pages/products/products.component";
 import {ProductDetailComponent} from "./pages/product-detail/product-detail.component";
 import {ProductsContentComponent} from "./pages/products-content/products-content.component";
+import {NewsComponent} from "./pages/news/news.component";
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: '_contact', component: ContactComponent },
   { path: 'checkout', component: CheckoutComponent},
+  { path: 'news', component: NewsComponent},
   {
-    path: 'products/:categoryId',
+    path: 'product/:categoryId',
     component: ProductsComponent,
     children:[
       { path: '', component: ProductsContentComponent },

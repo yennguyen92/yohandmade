@@ -19,6 +19,19 @@ export class CategoriesSidebarComponent implements AfterViewInit {
     let _this = this;
     setTimeout(function(){
       _this.display=false;
+      jQuery( "#slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 9000,
+        values: [ 1000, 7000 ],
+        slide: function( event, ui ) {  jQuery( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        }
+      });
+      jQuery( "#amount" )
+        .val( "$" + jQuery( "#slider-range" )
+            .slider( "values", 0 ) + " - $" + jQuery( "#slider-range" )
+            .slider( "values", 1 ) );
+
     },1000);
   }
 

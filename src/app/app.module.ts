@@ -22,7 +22,13 @@ import { NewDiscountComponent } from './components/new-discount/new-discount.com
 
 import {appRouting} from "./app.routing";
 import { APP_BASE_HREF } from '@angular/common';
+
 import { ProductsContentComponent } from './pages/products-content/products-content.component';
+import { NewsComponent } from './pages/news/news.component';
+//import { DatabaseService } from "./services/database.service";
+import {SiteDataService} from "./services/site-data.service";
+import {ProductDataService} from "./services/product-data.service";
+import {ContenteditableModelDirective} from "./directives/contenteditable-model.directive";
 
 @NgModule({
   declarations: [
@@ -40,7 +46,9 @@ import { ProductsContentComponent } from './pages/products-content/products-cont
     BannerGridComponent,
     NewArrivalsComponent,
     NewDiscountComponent,
-    ProductsContentComponent
+    ProductsContentComponent,
+    NewsComponent,
+    ContenteditableModelDirective
   ],
   imports: [
     appRouting,
@@ -49,8 +57,13 @@ import { ProductsContentComponent } from './pages/products-content/products-cont
     HttpModule
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/' }
+    { provide: APP_BASE_HREF, useValue: '/' },
+    //DatabaseService,
+    SiteDataService,
+    ProductDataService
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

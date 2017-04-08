@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-products-content',
@@ -8,10 +8,12 @@ import {Router} from "@angular/router";
 })
 export class ProductsContentComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor( private router: Router, private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+
   }
+
   onSelect(hero: any) {
     //this.router.navigate([crisis.id], { relativeTo: this.router });
     this.router.navigate(['/hero', hero.id]);

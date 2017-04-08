@@ -621,19 +621,19 @@
               if (methods.pauseInvisible.isHidden()) {
                 if(slider.startTimeout) {
                   clearTimeout(slider.startTimeout); //If clock is ticking, stop timer and prevent from starting while invisible
-                } else { 
+                } else {
                   slider.pause(); //Or just pause
                 }
               }
               else {
                 if(slider.started) {
                   slider.play(); //Initiated before, just play
-                } else { 
-                  if (slider.vars.initDelay > 0) { 
+                } else {
+                  if (slider.vars.initDelay > 0) {
                     setTimeout(slider.play, slider.vars.initDelay);
                   } else {
                     slider.play(); //Didn't init before: simply init or wait for it
-                  } 
+                  }
                 }
               }
             });
@@ -754,7 +754,7 @@
               slider.animating = false;
               slider.currentSlide = slider.animatingTo;
             }
-            
+
             // Unbind previous transitionEnd events and re-bind new transitionEnd event
             slider.container.unbind("webkitTransitionEnd transitionend");
             slider.container.bind("webkitTransitionEnd transitionend", function() {
@@ -1002,7 +1002,7 @@
     slider.update = function(pos, action) {
       slider.doMath();
 
-      // update currentSlide and slider.animatingTo if necessary
+      // changeEvent currentSlide and slider.animatingTo if necessary
       if (!carousel) {
         if (pos < slider.currentSlide) {
           slider.currentSlide += 1;
@@ -1012,7 +1012,7 @@
         slider.animatingTo = slider.currentSlide;
       }
 
-      // update controlNav
+      // changeEvent controlNav
       if (slider.vars.controlNav && !slider.manualControls) {
         if ((action === "add" && !carousel) || slider.pagingCount > slider.controlNav.length) {
           methods.controlNav.update("add");
@@ -1024,7 +1024,7 @@
           methods.controlNav.update("remove", slider.last);
         }
       }
-      // update directionNav
+      // changeEvent directionNav
       if (slider.vars.directionNav) { methods.directionNav.update(); }
 
     };
@@ -1042,10 +1042,10 @@
         (pos !== undefined) ? slider.slides.eq(pos).before($obj) : slider.container.append($obj);
       }
 
-      // update currentSlide, animatingTo, controlNav, and directionNav
+      // changeEvent currentSlide, animatingTo, controlNav, and directionNav
       slider.update(pos, "add");
 
-      // update slider.slides
+      // changeEvent slider.slides
       slider.slides = $(slider.vars.selector + ':not(.clone)', slider);
       // re-setup the slider to accomdate new slide
       slider.setup();
@@ -1056,7 +1056,7 @@
     slider.removeSlide = function(obj) {
       var pos = (isNaN(obj)) ? slider.slides.index($(obj)) : obj;
 
-      // update count
+      // changeEvent count
       slider.count -= 1;
       slider.last = slider.count - 1;
 
@@ -1067,11 +1067,11 @@
         (vertical && reverse) ? slider.slides.eq(slider.last).remove() : slider.slides.eq(obj).remove();
       }
 
-      // update currentSlide, animatingTo, controlNav, and directionNav
+      // changeEvent currentSlide, animatingTo, controlNav, and directionNav
       slider.doMath();
       slider.update(pos, "remove");
 
-      // update slider.slides
+      // changeEvent slider.slides
       slider.slides = $(slider.vars.selector + ':not(.clone)', slider);
       // re-setup the slider to accomdate new slide
       slider.setup();
