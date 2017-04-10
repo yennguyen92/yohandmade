@@ -29,6 +29,7 @@ import { NewsComponent } from './pages/news/news.component';
 import {SiteDataService} from "./services/site-data.service";
 import {ProductDataService} from "./services/product-data.service";
 import {ContenteditableModelDirective} from "./directives/contenteditable-model.directive";
+import {PlaceholderDirective} from "./directives/placeholder.directive.td";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {ContenteditableModelDirective} from "./directives/contenteditable-model.
     NewDiscountComponent,
     ProductsContentComponent,
     NewsComponent,
-    ContenteditableModelDirective
+    ContenteditableModelDirective,
+    PlaceholderDirective
   ],
   imports: [
     appRouting,
