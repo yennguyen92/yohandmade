@@ -32,37 +32,43 @@
     <div class="col-md-3 footer-left">
       <h2><a href="index.old.html"><img src="images/logo3.jpg" alt=" " /></a></h2>
       <!--<p contenteditable="true" (blur)="siteInfo.introduction=$event.srcElement.innerHTML; updateSiteInfo()">{{siteInfo.introduction}}</p>-->
-      <p contenteditable="true" [(contenteditableModel)]="siteInfo.introduction"></p>
+      <p [(dataModel)]="siteInfo.introduction" (change)="updateSiteInfo()" editable="true"></p>
     </div>
     <div class="col-md-9 footer-right">
       <div class="">
         <div class="col-md-4 sign-gd">
-          <h4>Information</h4>
+          <h4>Menu</h4>
           <ul>
             <li><a href="index.old.html">Home</a></li>
             <li><a href="mens.html">Men's Wear</a></li>
             <li><a href="womens.html">Women's Wear</a></li>
             <li><a href="electronics.html">Electronics</a></li>
             <li><a href="codes.html">Short Codes</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
           </ul>
         </div>
 
         <div class="col-md-4 sign-gd-two">
-          <h4>Store Information</h4>
+          <h4>Liên Hệ</h4>
           <ul>
-            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : 1234k Avenue, 4th block, <span>Newyork City.</span></li>
+            <li  *ngIf="siteInfo.address && siteInfo.address[0]">
+              <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
+              <span [(dataModel)]="siteInfo.address[0].no" [inline]="true" (change)="updateSiteInfo" contenteditable="true"></span>
+            </li>
             <li>
               <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
-              Email :
-              <input class="view" [(ngModel)]="siteInfo.email" (change)="updateSiteInfo">
+              <span [(dataModel)]="siteInfo.email" (change)="updateSiteInfo()" [inline]="true" [editable]="true"></span>
             </li>
-            <li *ngIf="siteInfo.phones"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone :
-              <input class="view" [(ngModel)]="siteInfo.phones[0]"  (change)="updateSiteInfo"></li>
+            <li *ngIf="siteInfo.phones && siteInfo.phones[0]">
+              <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
+              <span  [(dataModel)]="siteInfo.phones[0]" [inline]="true" (change)="updateSiteInfo()" contenteditable="true"></span>
+            </li>
           </ul>
         </div>
         <div class="col-md-4 sign-gd flickr-post">
-          <h4>Flickr Posts</h4>
+          <h4>Facebook Fans</h4>
           <ul>
             <li><a href="single.html"><img src="images/b15.jpg" alt=" " class="img-responsive" /></a></li>
             <li><a href="single.html"><img src="images/b16.jpg" alt=" " class="img-responsive" /></a></li>

@@ -9,6 +9,7 @@ import {SiteInfo} from "../../models/SiteInfo";
 })
 export class FooterComponent implements OnInit {
   public siteInfo: SiteInfo;
+  public inline111=true;
   constructor(private siteDataService:SiteDataService,  private zone: NgZone) { }
 
   async ngOnInit() {
