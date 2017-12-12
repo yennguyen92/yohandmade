@@ -1,9 +1,8 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import * as PouchDB from 'pouchdb';
 import {Model} from "../models/Model";
 //https://blog.couchbase.com/using-couchbase-mobile-in-a-web-application-with-only-angular-2-and-pouchdb/
 //@Injectable()
-
+declare const PouchDB: any;
 export class DatabaseService<T extends Model> {
   private databaseName: string;
   private db:any;
@@ -61,8 +60,17 @@ export class DatabaseService<T extends Model> {
   }
 
   async get(_id){
-    let doc = await this.db.get(_id);
-    return doc;
+
+    try {
+      let doc = await this.db.get(_id);
+      return doc;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+
+
+
   }
 
   async getAll(){

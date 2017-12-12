@@ -99,7 +99,6 @@ export class ContenteditableModelDirective implements OnInit, OnChanges {
   //     this.elementRef.nativeElement.innerText = this.ceDefault;
   //   }
   // }
-
   @HostListener('blur', ['$event'])
   onFocusout($event: any) {
     //const value = this.elementRef.nativeElement.innerText;

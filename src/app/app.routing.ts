@@ -9,7 +9,7 @@ import {ProductsContentComponent} from "./pages/products-content/products-conten
 import {NewsComponent} from "./pages/news/news.component";
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: '_contact', component: ContactComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'checkout', component: CheckoutComponent},
   { path: 'news', component: NewsComponent},
   {

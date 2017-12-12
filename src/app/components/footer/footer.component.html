@@ -55,7 +55,7 @@
           <ul>
             <li  *ngIf="siteInfo.address && siteInfo.address[0]">
               <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
-              <span [(dataModel)]="siteInfo.address[0].no" [inline]="true" (change)="updateSiteInfo" contenteditable="true"></span>
+              <span [(dataModel)]="siteInfo.address[0].no" [inline]="true" (change)="updateSiteInfo" [editable]="true"></span>
             </li>
             <li>
               <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
@@ -63,7 +63,7 @@
             </li>
             <li *ngIf="siteInfo.phones && siteInfo.phones[0]">
               <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
-              <span  [(dataModel)]="siteInfo.phones[0]" [inline]="true" (change)="updateSiteInfo()" contenteditable="true"></span>
+              <span  [(dataModel)]="siteInfo.phones[0]" [inline]="true" (change)="updateSiteInfo()" [editable]="true"></span>
             </li>
           </ul>
         </div>
@@ -85,7 +85,7 @@
       </div>
     </div>
     <div class="clearfix"></div>
-    <p class="copy-right">&copy 2016 Smart Shop. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+
   </div>
 </div>
 <!-- //footer -->

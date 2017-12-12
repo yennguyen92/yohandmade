@@ -1,4 +1,5 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "sourceMap": true,
     "declaration": false,
@@ -9,9 +10,9 @@
       "es2016"
     ],
     "outDir": "../out-tsc/spec",
+    "baseUrl": "./",
     "module": "commonjs",
     "target": "es6",
-    "baseUrl": "",
     "types": [
       "jasmine",
       "node"
@@ -21,6 +22,7 @@
     "test.ts"
   ],
   "include": [
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.d.ts"
   ]
 }
